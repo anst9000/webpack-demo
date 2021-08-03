@@ -1,7 +1,7 @@
-import { inputsAreValid } from "./utils/inputs-are-valid.js";
-import { parseInputs } from "./utils/parse-inputs.js";
+const alertService = new AlertService();
+const componentService = new ComponentService();
 
-export const run = (alertService, componentService) => {
+const run = (alertService, componentService) => {
   alertService.hideErrors();
 
   componentService.onClick(() => {
@@ -18,3 +18,5 @@ export const run = (alertService, componentService) => {
     }
   });
 };
+
+run(alertService, componentService);
