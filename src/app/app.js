@@ -7,14 +7,14 @@ const run = (alertService, componentService) => {
   componentService.onClick(() => {
     alertService.hideErrors();
     const inputs = componentService.getInputs();
-    const parseInputs = parseInputs(...inputs);
+    const parsedInputs = parseInputs(...inputs);
 
-    if (inputsAreValid(...parseInputs)) {
-      const [numA, numB] = parseInputs;
+    if (inputsAreValid(...parsedInputs)) {
+      const [numA, numB] = parsedInputs;
       componentService.setResult(numA + numB);
     } else {
       componentService.setResult("");
-      alertService.handleAdditionError(inputs, parseInputs);
+      alertService.handleAdditionError(inputs, parsedInputs);
     }
   });
 };
