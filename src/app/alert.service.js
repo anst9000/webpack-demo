@@ -1,11 +1,11 @@
-import { inputsAreValid } from './utils/inputs-are-valid.js'
+import { inputsAreValid } from "./utils/inputs-are-valid";
 
 export class AlertService {
   constructor() {
     this.errorBox = document.getElementById("error");
   }
 
-  handleAdditionError = (inputs, numbers) => {
+  handleAdditionError(inputs, numbers) {
     const fullMessage = inputs.reduce((message, str, index) => {
       if (inputsAreValid(numbers[index])) {
         return message + "";
@@ -18,7 +18,7 @@ export class AlertService {
     this.errorBox.innerText = fullMessage;
   }
 
-  hideErrors = () => {
-   this.errorBox.classList.add("invisible");
+  hideErrors() {
+    this.errorBox.classList.add("invisible");
   }
 }
