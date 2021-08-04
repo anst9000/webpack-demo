@@ -2,7 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    main: "./src/index.js",
+    vendor: "./src/vendor.js"
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Custom template',
@@ -27,13 +30,6 @@ module.exports = {
       {
         test: /\.(svg|png|jpg|gif)$/i,
         type: "asset/resource",
-        // use: {
-        //   loader: "file-loader",
-        //   options: {
-        //     name: "[name].[contenthash].[ext]",
-        //     outputPath: "imgs"
-        //   }
-        // }
       }
     ]
   }
